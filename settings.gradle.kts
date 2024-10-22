@@ -1,4 +1,4 @@
-rootProject.name = "revanced-acrobat"
+rootProject.name = "fourjr-revanced"
 
 pluginManagement {
     repositories {
