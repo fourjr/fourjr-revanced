@@ -1,7 +1,6 @@
 package app.revanced.patches.acrobat.premium
 
 import app.revanced.patcher.extensions.InstructionExtensions.replaceInstruction
-import app.revanced.patcher.extensions.InstructionExtensions.replaceInstructions
 import app.revanced.patcher.patch.bytecodePatch
 
 @Suppress("unused")
