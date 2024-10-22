@@ -4,16 +4,22 @@ import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.AccessFlags
 import app.revanced.patcher.fingerprint
 
-internal val hasPurchasedFingerprint = fingerprint {
-    accessFlags(AccessFlags.PUBLIC, AccessFlags.FINAL)
+internal val hasPremiumFingerprint = fingerprint {
+    // com.adobe.libs.services.auth.p.t0(Lcom/adobe/libs/services/utils/SVConstants$SERVICE_TYPE;)Z
+    accessFlags(AccessFlags.PUBLIC)
     returns("Z")
     opcodes(
-        Opcode.IGET_OBJECT,
-        Opcode.SGET_OBjECT,
+        Opcode.CONST_4,
+        Opcode.IF_EQZ,
+        Opcode.INVOKE_STATIC,
+        Opcode.MOVE_RESULT_OBJECT,
         Opcode.INVOKE_VIRTUAL,
         Opcode.MOVE_RESULT,
-        Opcode.IF_NEZ,
-        Opcode.IGET_OBJECT
+        Opcode.IF_EQZ,
+        Opcode.INVOKE_VIRTUAL,
+        Opcode.MOVE_RESULT_OBJECT,
+        Opcode.SGET_OBJECT,
+        Opcode.INVOKE_VIRTUAL,
+        Opcode.MOVE_RESULT
     )
-    parameters()
 }
