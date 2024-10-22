@@ -7,6 +7,7 @@ import app.revanced.patcher.patch.bytecodePatch
 @Suppress("unused")
 val unlockPremiumPatch = bytecodePatch(
     name = "Unlock Premium",
+    description = "Unlocks all premium features"
 ) {
     compatibleWith("com.adobe.reader")
 
